@@ -1,0 +1,33 @@
+{{ partial "header.html" . }}
+</br>	
+<center><img src="/images/logo3.png"></center>
+</br></br>
+</br>
+</br>
+
+
+        </div>
+
+        <div id="content">
+            <h1>Home</h1>
+
+            <p>Welcome to my blag...</p>
+<p>below are posts I have written</p>
+<h2>Posts</h2>
+<ul>
+            <ul>
+            {{ range .Data.Pages.ByPublishDate }}
+                {{ if eq .Section "blog" }}
+                    {{ partial "li.html" . }}
+                {{ end }}
+            {{ end }}
+            </ul>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+{{ partial "footer.html" . }}
+

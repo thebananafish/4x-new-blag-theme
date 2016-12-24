@@ -1,0 +1,33 @@
+{{ partial "header.html" . }}
+    <body>
+       
+	  
+</br>	
+<center><img src="/images/logo3.png"></center>
+</br></br>
+</br>
+</br>
+
+            
+        </div>
+
+        <div id="content">
+            <h1>Home</h1>
+
+            <p>Welcome to my blag...</p>
+<p>below are posts I have written</p>
+<h2>Posts</h2>
+<ul>
+    {{ range first 4 .Site.Pages }}
+    {{if eq .Type "blog" }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>, {{ .Date.Format "02 Jan, 2006" }}</li>
+    {{ end }}
+    {{ end }}
+</ul>
+</br>
+<p>…or you can find more in the <a href="./archive.html">archives</a>.</p>
+</br>
+</br>
+</br>
+</br>
+{{ partial "footer.html" . }}
